@@ -12,3 +12,6 @@ celery
 gunicorn
 psycopg2-binary
 SQLAlchemy-Utils
+keras
+tensorflow
+numpy
