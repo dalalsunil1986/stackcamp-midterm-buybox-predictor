@@ -1,1 +1,1 @@
-web: gunicorn buyboxpredictor.wsgi:app
+web: gunicorn buyboxpredictor.wsgi:app --log-file - --log-level debug
