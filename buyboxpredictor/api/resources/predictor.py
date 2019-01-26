@@ -4,7 +4,7 @@ from flask_jwt_extended import jwt_required
 
 import json
 import numpy as np
-from buyboxpredictor.lib.predictor import Predictor
+from lib import Predictor
 
 class PredictorResource(Resource):
 
