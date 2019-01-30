@@ -57,7 +57,7 @@ class PredictorResource(Resource):
 
             return {"result": result, "msg": msg}, 201
 
-        except Exception, e:
+        except:
 
             return {"error:":self.error_msg_internal_server_error}, 400
 
@@ -102,8 +102,8 @@ class UploadPredictorModel(Resource):
             try:
                 model_file.save(os.path.join(current_app.root_path+'/lib/', filename))
                 return {"success":"Model uploaded successfully."}, 200
-            except Exception, e:
-                return {"error":"Failed to upload your model. Error : "+str(e)}, 501
+            except:
+                return {"error":"Failed to upload your model."}, 501
         else:
             return {"error:":"File extensions must be : .h5"}, 400
             
