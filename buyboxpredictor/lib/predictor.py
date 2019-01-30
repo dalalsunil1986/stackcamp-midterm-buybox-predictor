@@ -10,6 +10,7 @@ class Predictor():
         model = load_model(cwd+"/buyboxpredictor/lib/buybox_predictor_model.h5")
 
         data_inputs = self.normalize_data([data_inputs])
+        print(data_inputs)
 
         result = model.predict([data_inputs]).round()
 
@@ -22,9 +23,11 @@ class Predictor():
 
         for i in range(len(datas)):        
             for j in range(len(highest)):
-                if datas[i][j] == 'true':
+                if datas[i][j] == True:
+                    print(datas[i][j])
                     datas[i][j] = 1.0
-                elif datas[i][j] == 'false':
+                elif datas[i][j] == False:
+                    print(datas[i][j])
                     datas[i][j] = 0.0
                 else:
                     datas[i][j] = float(datas[i][j])/float(highest[j])    

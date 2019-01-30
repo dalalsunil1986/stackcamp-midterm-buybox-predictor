@@ -1,9 +1,10 @@
 from .user import UserResource, UserList
-from .predictor import PredictorResource
+from .predictor import PredictorResource, UploadPredictorModel
 
 
 __all__ = [
     'UserResource',
     'UserList',
-    'PredictorResource'
+    'PredictorResource',
+    'UploadPredictorModel'
 ]

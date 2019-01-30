@@ -1,18 +1,17 @@
 from flask import Blueprint
 from flask_restful import Api
 
-from buyboxpredictor.api.resources import UserResource, UserList, PredictorResource
+from buyboxpredictor.api.resources import UserResource, UserList, PredictorResource, UploadPredictorModel
 
 
 blueprint = Blueprint('api', __name__, url_prefix='/api/v1')
 api = Api(blueprint)
 
-
-
 api.add_resource(UserResource, '/users/<int:user_id>')
 api.add_resource(UserList, '/users')
 
 api.add_resource(PredictorResource, '/predict')
+api.add_resource(UploadPredictorModel, '/uploadmodel')
 
 @blueprint.route('/')
 def index():
